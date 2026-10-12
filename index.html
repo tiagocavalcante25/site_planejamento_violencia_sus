@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Planejamento Reprodutivo, Violência contra a Mulher, Bioética & SUS | Portal Interativo</title>
+  <meta name="description" content="Guia Completo e Interativo de Planejamento Reprodutivo, Violência Sexual e Doméstica, Bioética, Aspectos Legais e SUS (Parte 8). USMLE Step 2 CK / CS / Step 3, FEBRASGO, Ministério da Saúde, ACOG, CDC e OMS.">
+
+  <!-- Configurações Mobile Web App para iOS e Android -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Planejamento-Violencia-SUS">
+  <meta name="theme-color" content="#4f46e5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#090d16" media="(prefers-color-scheme: dark)">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Previne Flash of Unstyled Content (FOUC) -->
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+
+        const savedFont = localStorage.getItem('fontSizePreference');
+        if (savedFont) {
+          document.documentElement.setAttribute('data-font-size', savedFont);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          screens: {
+            'xs': '480px'
+          },
+          colors: {
+            med: {
+              indigo: '#4f46e5',
+              sky: '#0284c7',
+              emerald: '#059669',
+              rose: '#e11d48',
+              amber: '#d97706',
+              purple: '#7c3aed',
+              dark: '#0b0f19'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col antialiased transition-colors duration-200">
+
+  <!-- ======================================================================
+       NAVBAR SUPERIOR FIXA (POSITION: FIXED, 100% RESPONSIVA, SEM GAVETA REDUNDANTE)
+       ====================================================================== -->
+  <header class="fixed top-0 left-0 right-0 w-full z-50 glass-nav border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+    <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-14 sm:h-16 gap-2 sm:gap-3">
+        
+        <!-- Logo e Título com Identidade Visual -->
+        <a href="#" class="flex items-center gap-2 sm:gap-2.5 min-w-0 flex-shrink group" title="Parte 8 - Início">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-sky-500 to-purple-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
+            <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+          </div>
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-xs sm:text-base tracking-tight text-slate-900 dark:text-white truncate">Planejamento • Violência • SUS</span>
+              <span class="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 hidden xs:inline-block flex-shrink-0">Parte 8 • USMLE</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Barra de Busca Global Inteligente (Desktop & Tablet) -->
+        <div class="hidden md:flex items-center flex-1 max-w-sm lg:max-w-md mx-2 lg:mx-4">
+          <div class="relative w-full">
+            <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input type="text" id="global-search" placeholder="Buscar módulos, condutas (MEC, PEP, Lei 14.443, THM...)" 
+              class="w-full pl-9 pr-14 py-2 text-xs rounded-xl bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-800 dark:text-slate-200 placeholder-slate-400 transition-all">
+            <kbd class="hidden lg:inline-flex items-center absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 dark:text-slate-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded shadow-sm">Ctrl K</kbd>
+          </div>
+        </div>
+
+        <!-- Ações Rápidas: Ferramentas, Casos, Acessibilidade e Tema -->
+        <div class="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
+          
+          <!-- Botão Atalho Calculadoras -->
+          <a href="#ferramentas" class="px-2 sm:px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700/80 transition-all flex items-center gap-1" title="Calculadoras Clínicas">
+            <i data-lucide="calculator" class="w-3.5 h-3.5 text-indigo-500"></i>
+            <span class="hidden sm:inline">Calculadoras</span>
+          </a>
+
+          <!-- Botão Atalho Casos USMLE -->
+          <a href="#casos-clinicos" class="px-2 sm:px-2.5 py-1.5 rounded-lg text-xs font-semibold text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-950/50 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 border border-indigo-200 dark:border-indigo-800/80 transition-all flex items-center gap-1" title="15 Casos Clínicos">
+            <i data-lucide="check-square" class="w-3.5 h-3.5"></i>
+            <span class="hidden sm:inline">15 Casos</span>
+          </a>
+
+          <!-- Controles de Acessibilidade de Fonte (A- / A / A+) -->
+          <div class="flex items-center bg-slate-100 dark:bg-slate-800/90 rounded-lg p-0.5 border border-slate-200 dark:border-slate-700" title="Ajuste do tamanho da fonte para leitura confortável">
+            <button type="button" id="font-decrease" class="px-1.5 py-1 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Diminuir fonte">A-</button>
+            <button type="button" id="font-reset" class="px-1.5 py-1 text-xs font-extrabold text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Fonte padrão">A</button>
+            <button type="button" id="font-increase" class="px-1.5 py-1 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Aumentar fonte">A+</button>
+          </div>
+
+          <!-- Alternador de Tema (Light / Dark) -->
+          <button type="button" id="theme-toggle" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all" title="Alternar Modo Escuro / Claro">
+            <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+            <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-indigo-600"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Barra de Busca Mobile Integrada (visível apenas em telas menores) -->
+      <div class="md:hidden pb-2.5 pt-0.5">
+        <div class="relative w-full">
+          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+          <input type="text" oninput="document.getElementById('global-search').value = this.value; document.getElementById('global-search').dispatchEvent(new Event('input'))" placeholder="Buscar módulos, temas ou condutas..." 
+            class="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 placeholder-slate-400">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       HERO SECTION — APRESENTAÇÃO E NAVEGAÇÃO RÁPIDA
+       ====================================================================== -->
+  <main class="flex-1 w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-6 sm:space-y-8">
+    
+    <section class="glass-card p-5 sm:p-8 rounded-2xl relative overflow-hidden bg-gradient-to-br from-indigo-900/10 via-purple-900/5 to-slate-900/10 border-indigo-500/20">
+      <div class="max-w-4xl relative z-10 space-y-3 sm:space-y-4">
+        
+        <!-- Badges Curriculares Oficiais -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-2.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 flex items-center gap-1">
+            <i data-lucide="shield-check" class="w-3 h-3"></i> USMLE Step 2 CK / Step 3
+          </span>
+          <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+            Lei 14.443/2022 • Lei Maria da Penha
+          </span>
+          <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+            FEBRASGO • SUS • OMS • CDC
+          </span>
+          <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+            🎈 Didática de 5 Anos Integrada
+          </span>
+        </div>
+
+        <h1 class="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+          Planejamento Reprodutivo, Violência contra a Mulher, Bioética & SUS
+        </h1>
+        
+        <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+          Portal interativo abrangente baseado no <strong>Guia de Obstetrícia e Ginecologia Parte 8</strong>. Cobre desde os <strong>Critérios MEC da OMS/CDC</strong>, LARCs, contracepção de emergência e infertilidade conjugal, até os protocolos de <strong>violência sexual (PEP 72h)</strong>, Maria da Penha, <strong>aborto previsto em lei (sem exigência de B.O.)</strong>, <strong>Rede Cegonha / RAMI</strong> e a <strong>janela de oportunidade da THM</strong>.
+        </p>
+
+        <!-- Barra de Navegação Rápida em Pílulas -->
+        <div class="flex flex-wrap gap-2 pt-2">
+          <a href="#bloco-a" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 border border-slate-200 dark:border-slate-700 hover:border-indigo-400 shadow-sm flex items-center gap-1.5 transition-all">
+            <i data-lucide="shield" class="w-3.5 h-3.5"></i> Bloco A: Planejamento & LARCs
+          </a>
+          <a href="#bloco-b" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-rose-600 dark:text-rose-400 border border-slate-200 dark:border-slate-700 hover:border-rose-400 shadow-sm flex items-center gap-1.5 transition-all">
+            <i data-lucide="alert-octagon" class="w-3.5 h-3.5"></i> Bloco B: Violência & Bioética
+          </a>
+          <a href="#bloco-c" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 border border-slate-200 dark:border-slate-700 hover:border-emerald-400 shadow-sm flex items-center gap-1.5 transition-all">
+            <i data-lucide="building" class="w-3.5 h-3.5"></i> Bloco C: SUS & Climatério
+          </a>
+          <a href="#ferramentas" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-amber-600 dark:text-amber-400 border border-slate-200 dark:border-slate-700 hover:border-amber-400 shadow-sm flex items-center gap-1.5 transition-all">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i> Calculadoras Interativas
+          </a>
+          <a href="#galeria-visual" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-sky-600 dark:text-sky-400 border border-slate-200 dark:border-slate-700 hover:border-sky-400 shadow-sm flex items-center gap-1.5 transition-all">
+            <i data-lucide="image" class="w-3.5 h-3.5"></i> Galeria HD (14 Imagens)
+          </a>
+          <a href="#casos-clinicos" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-purple-600 dark:text-purple-400 border border-slate-200 dark:border-slate-700 hover:border-purple-400 shadow-sm flex items-center gap-1.5 transition-all">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i> 15 Casos & Flashcards
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback de Busca Vazia -->
+    <div id="no-search-results" class="hidden p-6 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 text-amber-800 dark:text-amber-200 text-center">
+      <i data-lucide="alert-circle" class="w-8 h-8 mx-auto mb-2 text-amber-500"></i>
+      <h3 class="text-base font-bold">Nenhum módulo encontrado para a busca informada</h3>
+      <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Tente pesquisar por outros termos como <em>MEC, PEP, DIU, Ulipristal, Maria da Penha, Starfield, DEXA</em> ou limpe o campo de busca.</p>
+    </div>
+
+    <!-- ======================================================================
+         BLOCO A — PLANEJAMENTO REPRODUTIVO, CONTRACEPÇÃO & SAÚDE SEXUAL
+         ====================================================================== -->
+    <section id="bloco-a" class="space-y-6">
+      <div class="flex items-center justify-between border-b border-indigo-200 dark:border-indigo-900/60 pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold">A</div>
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">Bloco A: Planejamento Reprodutivo & Saúde Sexual</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Módulos 82 a 87 • Critérios MEC, LARCs, Emergência, Infertilidade e Modelo PLISSIT</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 hidden sm:inline">OMS • CDC • FEBRASGO</span>
+      </div>
+
+      <!-- MÓDULO 82: Fisiologia & Critérios MEC -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
+            Módulo 82
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Índice de Pearl & Categorias MEC</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Fisiologia da Contracepção, Índice de Pearl & Critérios Médicos de Elegibilidade (MEC OMS/CDC)
+        </h3>
+
+        <!-- 5 Anos Box -->
+        <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900">
+          <h4 class="text-xs font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-1 flex items-center gap-1.5">
+            🎈 Didática para Criança de 5 Anos: A Coleção de Capas de Chuva Mágicas
+          </h4>
+          <p class="text-xs sm:text-sm text-amber-950 dark:text-amber-200 leading-relaxed">
+            Toda vez que a sementinha quer achar a florzinha na casinha da mamãe, pode nascer um bebê. A anticoncepção é como uma coleção de capas mágicas: alguns trancam o portão (camisinha), outros dizem para o jardim não soltar flores (remédios que impedem a ovulação) e outros colocam uma estrelinha de brinquedo (DIU) cheia de geleia para a sementinha não conseguir nadar! O médico nunca manda: ele mostra as capas e ajuda a escolher a mais segura!
+          </p>
+        </div>
+
+        <!-- Ivy League Concept -->
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm space-y-2">
+          <h4 class="font-bold text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5">
+            <i data-lucide="activity" class="w-4 h-4"></i> Raciocínio Ivy League: Fisiopatologia das Contraindicações Absolutas (MEC 4)
+          </h4>
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+            O componente estrogênico (etinilestradiol) induz síntese hepática acelerada dos fatores II, VII, VIII, X e fibrinogênio, e inibe antitrombina III e proteína S. Por isso, <strong>toda condição com dano vascular ou pró-trombótica contraindica estrogênios combinados (MEC 4)</strong>:
+          </p>
+          <ul class="list-disc pl-5 space-y-1 text-slate-700 dark:text-slate-300">
+            <li><strong>Enxaqueca com Aura:</strong> Vasoespasmo cortical transitório + estrogênio = risco crítico de AVC Isquêmico.</li>
+            <li><strong>Tabagismo em mulheres ≥ 35 anos (≥ 15 cigarros/dia):</strong> Sinergismo aterotrombótico para infarto e AVC.</li>
+            <li><strong>Hipertensão Grave (PAS ≥ 160 ou PAD ≥ 100 mmHg):</strong> Risco inaceitável de AVC hemorrágico e dissecção.</li>
+            <li><strong>Histórico ou TEV ativo e Trombofilias conhecidas:</strong> Risco imediato de recidiva tromboembólica fatal.</li>
+            <li><strong>Câncer de Mama Atual:</strong> MEC 4 para QUALQUER método hormonal (inclusive implante e DIU de levonorgestrel). Apenas o <strong>DIU de cobre</strong> é livre de hormônio (MEC 1).</li>
+          </ul>
+        </div>
+
+        <!-- Infográfico Integrado MEC -->
+        <div class="pt-2">
+          <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+            <img src="assets/img/criterios_mec_oms_cdc_tabela.jpg" alt="Infográfico Clínico: Critérios Médicos de Elegibilidade Contraceptiva (MEC 1 a 4) - OMS, CDC e Brasil" class="w-full h-auto object-cover img-zoom-hover">
+            <div class="p-3 bg-slate-900/90 text-white text-xs flex items-center justify-between">
+              <span><strong>Infográfico 82.1:</strong> Classificação MEC OMS/CDC e Matriz de Decisão Clínica</span>
+              <span class="text-slate-400 text-[11px] flex items-center gap-1"><i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Toque para ampliar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabela Pearl e Eficácia -->
+        <div class="table-responsive-container">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-indigo-50 dark:bg-indigo-950/60 text-indigo-900 dark:text-indigo-200 border-b border-indigo-200 dark:border-indigo-800">
+                <th class="p-2.5 font-bold">Tier / Eficácia</th>
+                <th class="p-2.5 font-bold">Método Contraceptivo</th>
+                <th class="p-2.5 font-bold">Falha Uso Típico</th>
+                <th class="p-2.5 font-bold">Falha Uso Perfeito</th>
+                <th class="p-2.5 font-bold">Mecanismo de Ação Principal</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+              <tr>
+                <td class="p-2.5 font-bold text-emerald-600">Tier 1 (LARC)</td>
+                <td class="p-2.5 font-semibold">Implante Etonogestrel (Implanon)</td>
+                <td class="p-2.5 font-mono font-bold text-emerald-600">0,05%</td>
+                <td class="p-2.5 font-mono">0,05%</td>
+                <td class="p-2.5">Anovulação persistente + espessamento do muco cervical</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-emerald-600">Tier 1 (LARC)</td>
+                <td class="p-2.5 font-semibold">DIU Levonorgestrel 52mg (Mirena)</td>
+                <td class="p-2.5 font-mono font-bold text-emerald-600">0,1–0,2%</td>
+                <td class="p-2.5 font-mono">0,1%</td>
+                <td class="p-2.5">Atrofia endometrial intensa + muco impenetrável</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-emerald-600">Tier 1 (LARC)</td>
+                <td class="p-2.5 font-semibold">DIU de Cobre (TCu380A)</td>
+                <td class="p-2.5 font-mono font-bold text-emerald-600">0,8%</td>
+                <td class="p-2.5 font-mono">0,6%</td>
+                <td class="p-2.5">Reação inflamatória estéril + efeito espermicida dos íons de cobre</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-amber-600">Tier 2</td>
+                <td class="p-2.5 font-semibold">Pílulas Combinadas / Anel / Adesivo</td>
+                <td class="p-2.5 font-mono font-bold text-amber-600">7–9%</td>
+                <td class="p-2.5 font-mono">0,3%</td>
+                <td class="p-2.5">Bloqueio central do eixo hipotálamo-hipófise (FSH/LH)</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-rose-600">Tier 3</td>
+                <td class="p-2.5 font-semibold">Preservativo Masculino</td>
+                <td class="p-2.5 font-mono font-bold text-rose-600">13%</td>
+                <td class="p-2.5 font-mono">2%</td>
+                <td class="p-2.5">Barreira mecânica (Único método que protege contra ISTs/HIV!)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- MÓDULO 83: LARCs (DIU de Cobre, DIU-LNG, Implante) -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+            Módulo 83
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Padrão-Ouro de Primeira Linha</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Métodos Reversíveis de Longa Ação (LARCs) & Manejo de Complicações
+        </h3>
+
+        <!-- Imagem Ultra-Realista LARC -->
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+          <img src="assets/img/larc_diu_implante_real.jpg" alt="Fotografia em Alta Definição: Métodos Reversíveis de Longa Ação (LARCs - DIU Cobre TCu380A, DIU Levonorgestrel e Implante Subdérmico)" class="w-full h-auto object-cover img-zoom-hover">
+          <div class="p-3 bg-slate-900/90 text-white text-xs flex items-center justify-between">
+            <span><strong>Figura 83.1:</strong> Dispositivos LARCs (DIU TCu380A, Sistema Intrauterino LNG e Implante Etonogestrel)</span>
+            <span class="text-slate-400 text-[11px] flex items-center gap-1"><i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Toque para ampliar</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <span class="font-bold text-indigo-600 dark:text-indigo-400 uppercase">DIU de Cobre (TCu380A)</span>
+            <p class="text-slate-600 dark:text-slate-300"><strong>Duração:</strong> 10 anos. <strong>Hormônio:</strong> 0% (não hormonal). <strong>Indicação:</strong> Escolha perfeita para histórico de trombose, tabagismo e câncer de mama ativo.</p>
+            <p class="text-slate-500 dark:text-slate-400"><strong>Efeito colateral:</strong> Aumento do fluxo e cólicas nos primeiros 3-6 meses.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <span class="font-bold text-sky-600 dark:text-sky-400 uppercase">DIU Levonorgestrel (52mg)</span>
+            <p class="text-slate-600 dark:text-slate-300"><strong>Duração:</strong> 8 anos (Mirena). <strong>Ação:</strong> Liberação local de progestagênio, atrofia endometrial e muco espesso.</p>
+            <p class="text-slate-500 dark:text-slate-400"><strong>Vantagem terapêutica:</strong> Redução de 90% do sangramento e tratamento de escolha da menorragia e adenomiose.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <span class="font-bold text-emerald-600 dark:text-emerald-400 uppercase">Implante Etonogestrel</span>
+            <p class="text-slate-600 dark:text-slate-300"><strong>Duração:</strong> 3 anos (Nexplanon). <strong>Eficácia:</strong> O método contraceptivo mais eficaz do planeta (0,05% de falha).</p>
+            <p class="text-slate-500 dark:text-slate-400"><strong>Padrão de sangramento:</strong> Amenorreia ou sangramento irregular imprevisível (spotting).</p>
+          </div>
+        </div>
+
+        <!-- Manejo de Complicações High-Yield -->
+        <div class="p-4 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900 text-xs sm:text-sm space-y-2">
+          <h4 class="font-bold text-rose-800 dark:text-rose-300 flex items-center gap-1.5">
+            <i data-lucide="alert-triangle" class="w-4 h-4"></i> Pérolas de Exame USMLE & Revalida: Manejo de Complicações do DIU
+          </h4>
+          <ul class="list-disc pl-5 space-y-1 text-slate-700 dark:text-slate-300">
+            <li><strong>Fios do DIU não visíveis ao exame especular (Missing Strings):</strong> 1º Passo = Excluir gravidez (β-hCG) e realizar <strong>Ultrassonografia Transvaginal</strong>. Se a USG mostrar DIU centrado, conduta expectante. Se o útero estiver vazio, solicitar <strong>Radiografia de Abdome/Pelve</strong> para afastar perfuração e migração para cavidade peritoneal.</li>
+            <li><strong>Doença Inflamatória Pélvica (DIP) em usuária de DIU:</strong> NÃO é necessário retirar o DIU imediatamente! Inicia-se antibioticoterapia parenteral/oral e reavalia em 48–72 horas. Só se remove o DIU se não houver melhora clínica após 72 horas de tratamento adequado.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- MÓDULO 84: Métodos Hormonais e Legislação 14.443/2022 -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">
+            Módulo 84
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Lei Federal nº 14.443/2022</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Métodos Definitivos (Laqueadura / Vasectomia) & Marco Legal Brasileiro Atualizado
+        </h3>
+
+        <div class="p-4 rounded-xl bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-900 text-xs sm:text-sm space-y-2">
+          <h4 class="font-bold text-purple-800 dark:text-purple-300 flex items-center gap-1.5">
+            <i data-lucide="scale" class="w-4 h-4"></i> O que Mudou com a Lei Federal nº 14.443/2022 (Em Vigor)?
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-1">
+            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+              <span class="font-bold text-indigo-600 block mb-1">1. Redução da Idade Mínima</span>
+              <p class="text-slate-600 dark:text-slate-300">Idade mínima caiu de 25 para <strong>21 anos</strong>, OU ter pelo menos <strong>dois filhos vivos</strong> com capacidade civil plena.</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+              <span class="font-bold text-emerald-600 block mb-1">2. FIM da Autorização do Cônjuge</span>
+              <p class="text-slate-600 dark:text-slate-300"><strong>REVOGADA</strong> expressamente a exigência de consentimento do parceiro/marido. A decisão reprodutiva é 100% individual e autônoma!</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+              <span class="font-bold text-sky-600 block mb-1">3. Laqueadura Durante o Parto</span>
+              <p class="text-slate-600 dark:text-slate-300">Permitida durante o parto normal ou cesariana, desde que a manifestação de vontade tenha sido formalizada pelo menos <strong>60 dias antes</strong>.</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+              <span class="font-bold text-amber-600 block mb-1">4. Prazo de Reflexão Mantido</span>
+              <p class="text-slate-600 dark:text-slate-300">Mantém-se o interstício obrigatório de <strong>60 dias</strong> entre a manifestação da vontade e o procedimento cirúrgico.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MÓDULO 85: Contracepção de Emergência -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300">
+            Módulo 85
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Protocolo Pós-Coito até 120h</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Contracepção de Emergência: DIU de Cobre, Ulipristal & Levonorgestrel
+        </h3>
+
+        <!-- Diagrama Emergência -->
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+          <img src="assets/img/contracepcao_emergencia_algoritmo.jpg" alt="Algoritmo Decisório: Contracepção de Emergência Baseada em Tempo Pós-Coito e IMC" class="w-full h-auto object-cover img-zoom-hover">
+          <div class="p-3 bg-slate-900/90 text-white text-xs flex items-center justify-between">
+            <span><strong>Figura 85.1:</strong> Algoritmo Clínico de Contracepção de Emergência (Janela Temporal e Fator Obesidade)</span>
+            <span class="text-slate-400 text-[11px] flex items-center gap-1"><i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Toque para ampliar</span>
+          </div>
+        </div>
+
+        <div class="table-responsive-container">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                <th class="p-2.5 font-bold">Método de Emergência</th>
+                <th class="p-2.5 font-bold">Janela Temporal</th>
+                <th class="p-2.5 font-bold">Mecanismo Exato</th>
+                <th class="p-2.5 font-bold">Impacto da Obesidade (IMC)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+              <tr>
+                <td class="p-2.5 font-bold text-emerald-600">DIU de Cobre (TCu380A)</td>
+                <td class="p-2.5 font-semibold">Até 120 horas (5 dias)</td>
+                <td class="p-2.5">Efeito citotóxico no esperma/óvulo + impede nidação. Eficácia > 99,8%!</td>
+                <td class="p-2.5 font-bold text-emerald-600">NENHUMA perda de eficácia. Método de escolha em IMC alto!</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-sky-600">Acetato de Ulipristal (30 mg)</td>
+                <td class="p-2.5 font-semibold">Até 120 horas (5 dias)</td>
+                <td class="p-2.5">SPRM: Bloqueia o pico de LH mesmo após início de sua elevação.</td>
+                <td class="p-2.5">Eficácia mantida em IMC até 35 kg/m².</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-amber-600">Levonorgestrel (1,5 mg VO)</td>
+                <td class="p-2.5 font-semibold">Até 72 horas (ideal)</td>
+                <td class="p-2.5">Inibe a subida inicial do LH. Se o LH já subiu, NÃO impede a ovulação.</td>
+                <td class="p-2.5 font-bold text-rose-600">Perda substancial de eficácia em mulheres com IMC > 25–30 kg/m²!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- MÓDULO 86: Investigação de Infertilidade Conjugal -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300">
+            Módulo 86
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Investigação dos 4 Pilares</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Infertilidade Conjugal: Definições, Fator Masculino, Trompas & Histerossalpingografia
+        </h3>
+
+        <!-- Imagens Infertilidade: HSG Real + Diagrama 4 Pilares -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+            <img src="assets/img/hsg_fluoroscopia_real.jpg" alt="Fluoroscopia Diagnóstica: Histerossalpingografia (HSG) com Trompas Pérvias e Prova de Cotte Positiva" class="w-full h-auto object-cover img-zoom-hover">
+            <div class="p-2.5 bg-slate-900/90 text-white text-xs">
+              <strong>Figura 86.1:</strong> Histerossalpingografia (Cavidade Triangular e Cotte Positivo)
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+            <img src="assets/img/infertilidade_4_pilares_investigacao.jpg" alt="Fluxograma Diagnóstico: Os 4 Pilares da Investigação Sistemática da Infertilidade Conjugal" class="w-full h-auto object-cover img-zoom-hover">
+            <div class="p-2.5 bg-slate-900/90 text-white text-xs">
+              <strong>Figura 86.2:</strong> Os 4 Pilares da Avaliação Sistemática da Infertilidade
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm space-y-2">
+          <h4 class="font-bold text-sky-600 dark:text-sky-400 flex items-center gap-1.5">
+            <i data-lucide="microscope" class="w-4 h-4"></i> Regra de Ouro da Andrologia (USMLE Step 2 & 3)
+          </h4>
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+            O ciclo da espermatogênese dura aproximadamente <strong>74 dias</strong> e apresenta flutuações acentuadas com febre recente, estresse ou banhos quentes. Portanto: <strong>NUNCA se firma diagnóstico de fator masculino ou indicação de FIV com base em um único espermograma!</strong> É mandatório repetir o espermograma completo após <strong>4 a 12 semanas</strong> para confirmar qualquer alteração.
+          </p>
+        </div>
+      </article>
+
+      <!-- MÓDULO 87: Saúde Sexual & Modelo PLISSIT -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
+            Módulo 87
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Abordagem Escalonada PLISSIT</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Saúde Sexual, Direitos Reprodutivos & Disfunções Sexuais Femininas
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+          <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="font-bold text-indigo-600 block mb-1">P - Permission</span>
+            <p class="text-slate-600 dark:text-slate-300">Dar permissão explícita para a mulher falar sobre sexualidade, fantasias e angústias sem julgamentos.</p>
+          </div>
+          <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="font-bold text-sky-600 block mb-1">LI - Limited Info</span>
+            <p class="text-slate-600 dark:text-slate-300">Esclarecer mitos anatômicos, fisiologia do clitóris, lubrificação e fases da resposta sexual humana.</p>
+          </div>
+          <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="font-bold text-emerald-600 block mb-1">SS - Specific Suggestions</span>
+            <p class="text-slate-600 dark:text-slate-300">Prescrever lubrificantes à base de água, hidratantes vaginais, fisioterapia pélvica e dilatadores.</p>
+          </div>
+          <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="font-bold text-purple-600 block mb-1">IT - Intensive Therapy</span>
+            <p class="text-slate-600 dark:text-slate-300">Encaminhamento para psicoterapia sexual especializada em casos refratários ou traumas complexos.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ======================================================================
+         BLOCO B — VIOLÊNCIA CONTRA A MULHER, BIOÉTICA & ASPECTOS LEGAIS
+         ====================================================================== -->
+    <section id="bloco-b" class="space-y-6 pt-4">
+      <div class="flex items-center justify-between border-b border-rose-200 dark:border-rose-900/60 pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold">B</div>
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">Bloco B: Violência contra a Mulher, Bioética & Legislação</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Módulos 88 a 91 • PEP 72h, Maria da Penha, Aborto Legal e Objeção de Consciência</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 hidden sm:inline">SUS • Código Penal • ACOG</span>
+      </div>
+
+      <!-- MÓDULO 88: Violência Sexual Aguda e Protocolo 72h -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300">
+            Módulo 88
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Emergência Médica das 72 Horas</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Violência Sexual Aguda: Acolhimento, PEP HIV (28 Dias), Profilaxia de ISTs & Cadeia de Custódia
+        </h3>
+
+        <!-- Imagens Violência Sexual: Kit Forense Real + Protocolo 72h -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+            <img src="assets/img/violencia_sexual_kit_pep_real.jpg" alt="Fotografia Clínica e Forense: Kit de Atendimento à Violência Sexual (PEP HIV Dolutegravir + Contracepção de Emergência + Swabs Forenses)" class="w-full h-auto object-cover img-zoom-hover">
+            <div class="p-2.5 bg-slate-900/90 text-white text-xs">
+              <strong>Figura 88.1:</strong> Kit Forense de Evidências e Profilaxia Antirretroviral (PEP HIV)
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+            <img src="assets/img/violencia_sexual_protocolo_72h.jpg" alt="Infográfico Clínico: Protocolo das Primeiras 72 Horas Pós-Violência Sexual (PEP, ISTs, Vacinas e Cadeia de Custódia)" class="w-full h-auto object-cover img-zoom-hover">
+            <div class="p-2.5 bg-slate-900/90 text-white text-xs">
+              <strong>Figura 88.2:</strong> Protocolo Integrado das Primeiras 72 Horas de Atendimento
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Anos Box -->
+        <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900">
+          <h4 class="text-xs font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-1 flex items-center gap-1.5">
+            🎈 Didática para Criança de 5 Anos: O Hospital é o Abraço Seguro
+          </h4>
+          <p class="text-xs sm:text-sm text-amber-950 dark:text-amber-200 leading-relaxed">
+            Quando alguém sofre uma maldade dessas, ela está muito assustada. O médico primeiro abraça e diz: "Você está segura aqui e a culpa nunca foi sua". Depois dá os remédios mágicos para não deixar nenhum bichinho ruim entrar: remédio contra o vírus do HIV por 28 dias, remédios contra bactérias e um comprimido para não nascer bebê. E o médico NUNCA manda ela ir na polícia antes de tomar seus remédios!
+          </p>
+        </div>
+
+        <!-- Tabela Profilaxias Imediatas -->
+        <div class="table-responsive-container">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-rose-50 dark:bg-rose-950/50 text-rose-900 dark:text-rose-200 border-b border-rose-200 dark:border-rose-800">
+                <th class="p-2.5 font-bold">Agente / Risco</th>
+                <th class="p-2.5 font-bold">Esquema Farmacológico Oficial</th>
+                <th class="p-2.5 font-bold">Duração / Via</th>
+                <th class="p-2.5 font-bold">Observações & Regras de Ouro</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+              <tr>
+                <td class="p-2.5 font-bold text-rose-600">HIV (PEP)</td>
+                <td class="p-2.5 font-semibold">Tenofovir (TDF) + Lamivudina (3TC) + Dolutegravir (DTG)</td>
+                <td class="p-2.5 font-mono font-bold text-rose-600">28 DIAS (Oral)</td>
+                <td class="p-2.5">Iniciar idealmente nas primeiras 2h e no MÁXIMO em até 72h. Teste rápido no leito prévio.</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-sky-600">Gonococo & Clamídia</td>
+                <td class="p-2.5 font-semibold">Ceftriaxona 500mg IM + Azitromicina 1g VO</td>
+                <td class="p-2.5">Dose Única Imediata</td>
+                <td class="p-2.5">Cobre Neisseria gonorrhoeae e Chlamydia trachomatis.</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-indigo-600">Tricomoníase</td>
+                <td class="p-2.5 font-semibold">Metronidazol 2g VO (ou 500mg 12/12h por 7 dias)</td>
+                <td class="p-2.5">Dose Única VO</td>
+                <td class="p-2.5">Orientar abstenção alcoólica por 48h (efeito dissulfiram).</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-purple-600">Hepatite B</td>
+                <td class="p-2.5 font-semibold">Vacina Hepatite B (0, 1, 6 meses) ± Imunoglobulina HBIG</td>
+                <td class="p-2.5">IM em sítios distintos</td>
+                <td class="p-2.5">Se vacinação completa comprovada = DISPENSA HBIG. Se não imunizada = HBIG 0,06 mL/kg IM até 14 dias.</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-amber-600">Gravidez Indesejada</td>
+                <td class="p-2.5 font-semibold">Levonorgestrel 1,5mg VO dose única (ou DIU Cobre até 120h)</td>
+                <td class="p-2.5">Dose Única</td>
+                <td class="p-2.5">Administrar imediatamente com antiemético se houver náuseas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- MÓDULO 89: Violência Doméstica & Lei Maria da Penha -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">
+            Módulo 89
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Lei Federal nº 11.340/2006</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Violência Doméstica, Lei Maria da Penha (5 Modalidades) & Ciclo de Walker
+        </h3>
+
+        <!-- Infográfico Maria da Penha -->
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+          <img src="assets/img/violencia_domestica_lei_maria_penha.jpg" alt="Mapa Jurídico e Clínico: Lei Maria da Penha (5 Tipos de Violência), Ciclo de Walker e Notificação no SUS" class="w-full h-auto object-cover img-zoom-hover">
+          <div class="p-3 bg-slate-900/90 text-white text-xs flex items-center justify-between">
+            <span><strong>Figura 89.1:</strong> As 5 Formas de Violência Doméstica, Ciclo de Walker e Fluxo de Proteção</span>
+            <span class="text-slate-400 text-[11px] flex items-center gap-1"><i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Toque para ampliar</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm space-y-2">
+          <h4 class="font-bold text-purple-600 dark:text-purple-400 flex items-center gap-1.5">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> Pegadinha Ética de Prova: Notificação Compulsória vs Queixa Policial
+          </h4>
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+            A notificação de violência interpessoal/doméstica é <strong>COMPULSÓRIA para fins de vigilância epidemiológica (Ficha SINAN)</strong> em até 24h. Porém: <strong>Em mulheres adultas e capazes, o médico NÃO pode comunicar a polícia sem a autorização da mulher!</strong> Quebrar o sigilo e acionar as autoridades policiais contra a vontade da vítima pode colocá-la sob risco imediato de feminicídio. A exceção aplica-se a menores de 18 anos, idosos, incapazes ou risco público iminente.
+          </p>
+        </div>
+      </article>
+
+      <!-- MÓDULO 90: Aborto Legal & Procedimento AMIU -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300">
+            Módulo 90
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Código Penal Art. 128 & ADPF 54</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Aborto Previsto em Lei no Brasil, Instrumental AMIU & Diretrizes Internacionais
+        </h3>
+
+        <!-- Imagens Aborto Legal: AMIU Real + Diagrama Comparativo -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+            <img src="assets/img/amiu_instrumental_real.jpg" alt="Instrumental Cirúrgico Esterilizado: Conjunto Completo de Aspiração Manual Intrauterina (AMIU) com Vácuo Ipas e Cânulas Semirrígidas" class="w-full h-auto object-cover img-zoom-hover">
+            <div class="p-2.5 bg-slate-900/90 text-white text-xs">
+              <strong>Figura 90.1:</strong> Seringa de Vácuo Manual Ipas e Cânulas Semirrígidas de Karman (AMIU)
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+            <img src="assets/img/aborto_legal_brasil_usmle.jpg" alt="Quadro Comparativo: Aborto Legal no Brasil (3 Hipóteses sem Exigência de BO) vs EMTALA e Padrão Internacional" class="w-full h-auto object-cover img-zoom-hover">
+            <div class="p-2.5 bg-slate-900/90 text-white text-xs">
+              <strong>Figura 90.2:</strong> As 3 Hipóteses de Aborto Legal no Brasil vs EMTALA nos EUA
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900 text-xs sm:text-sm space-y-2">
+          <h4 class="font-bold text-emerald-800 dark:text-emerald-300 flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-4 h-4"></i> As 3 Hipóteses Não Puníveis no Brasil (Norma Técnica MS & CFM)
+          </h4>
+          <ol class="list-decimal pl-5 space-y-1 text-slate-700 dark:text-slate-300">
+            <li><strong>Aborto Terapêutico (Necessário):</strong> Quando não há outro meio de salvar a vida da gestante (Art. 128, I, CP).</li>
+            <li><strong>Aborto Humanitário (Sentimental):</strong> Gravidez decorrente de estupro (Art. 128, II, CP). <em>NÃO exige BO, alvará judicial ou laudo de IML!</em></li>
+            <li><strong>Anencefalia Fetal:</strong> Decisão do STF na ADPF 54 (2012). Comprovada por ultrassonografia com 2 fotografias assinadas por dois médicos.</li>
+          </ol>
+        </div>
+      </article>
+
+      <!-- MÓDULO 91: Bioética & Objeção de Consciência -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
+            Módulo 91
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Princípios de Beauchamp & Childress</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Bioética Médica, Sigilo na Adolescente & Limites da Objeção de Consciência
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 space-y-2">
+            <h4 class="font-bold text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5">
+              <i data-lucide="user-check" class="w-4 h-4"></i> Sigilo e Contracepção em Menores de Idade
+            </h4>
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+              Pelo CFM e ECA, adolescentes a partir de 12 anos têm direito a consulta médica desacompanhada e à prescrição de contracepção sob sigilo absoluto, desde que possuam capacidade de discernimento. <strong>O sigilo só pode ser quebrado em suspeita de violência sexual / vulnerabilidade (< 14 anos) ou risco grave de vida/autoagressão.</strong>
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 space-y-2">
+            <h4 class="font-bold text-rose-600 dark:text-rose-400 flex items-center gap-1.5">
+              <i data-lucide="shield-off" class="w-4 h-4"></i> Limites Éticos da Objeção de Consciência Médica
+            </h4>
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+              O médico pode recusar-se a realizar procedimentos contrários à sua moral (como aborto legal), <strong>EXCETO em situações de emergência com risco iminente de morte ou quando não houver outro colega disponível no serviço</strong>. Além disso, o médico é OBRIGADO a prestar cuidados pré e pós-procedimento e encaminhar adequadamente a paciente.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ======================================================================
+         BLOCO C — GINECOLOGIA E OBSTETRÍCIA NO SUS & ATENÇÃO INTEGRAL
+         ====================================================================== -->
+    <section id="bloco-c" class="space-y-6 pt-4">
+      <div class="flex items-center justify-between border-b border-emerald-200 dark:border-emerald-900/60 pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold">C</div>
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">Bloco C: SUS & Atenção Integral à Saúde da Mulher</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Módulos 92 a 95 • Starfield, Rede Cegonha, Janela da THM e Osteoporose DEXA</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 hidden sm:inline">PNAISM • FEBRASGO • USPSTF</span>
+      </div>
+
+      <!-- MÓDULO 92: Atenção Básica e Starfield -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+            Módulo 92
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Atenção Primária à Saúde (APS)</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Organização da Atenção Básica, PNAISM & os 4 Atributos Essenciais de Starfield
+        </h3>
+
+        <!-- Imagem Acolhimento Real -->
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+          <img src="assets/img/consulta_acolhimento_real.jpg" alt="Cena Clínica Realista: Acolhimento Humanizado, Escuta Qualificada e Linha de Cuidado Integral na Atenção Primária à Saúde" class="w-full h-auto object-cover img-zoom-hover">
+          <div class="p-3 bg-slate-900/90 text-white text-xs flex items-center justify-between">
+            <span><strong>Figura 92.1:</strong> Acolhimento Humanizado, Longitudinalidade e Escuta Qualificada na APS</span>
+            <span class="text-slate-400 text-[11px] flex items-center gap-1"><i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Toque para ampliar</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+          <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="font-bold text-emerald-600 block mb-1">1. Primeiro Contato</span>
+            <p class="text-slate-600 dark:text-slate-300">A UBS como porta de entrada preferencial, acessível e acolhedora para qualquer queixa da mulher.</p>
+          </div>
+          <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="font-bold text-sky-600 block mb-1">2. Longitudinalidade</span>
+            <p class="text-slate-600 dark:text-slate-300">Vínculo interpessoal contínuo ao longo dos anos, da adolescência ao climatério e senescência.</p>
+          </div>
+          <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="font-bold text-indigo-600 block mb-1">3. Integralidade</span>
+            <p class="text-slate-600 dark:text-slate-300">Reconhecer todas as dimensões bio-psico-sociais da mulher, além de prevenção de câncer e pré-natal.</p>
+          </div>
+          <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="font-bold text-purple-600 block mb-1">4. Coordenação</span>
+            <p class="text-slate-600 dark:text-slate-300">Articular o encaminhamento seguro entre os níveis secundário e terciário garantindo o retorno.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- MÓDULO 93: Rede Cegonha / RAMI -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300">
+            Módulo 93
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Rede de Atenção Materno-Infantil</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Linha de Cuidado da Gestante, Rede Cegonha (RAMI) & Lei do Acompanhante (11.108/2005)
+        </h3>
+
+        <!-- Infográfico Rede Cegonha -->
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+          <img src="assets/img/rede_cegonha_rami_linha_cuidado.jpg" alt="Mapa do SUS: Rede Cegonha / RAMI, Linha de Cuidado Materno-Infantil e Lei do Acompanhante" class="w-full h-auto object-cover img-zoom-hover">
+          <div class="p-3 bg-slate-900/90 text-white text-xs flex items-center justify-between">
+            <span><strong>Figura 93.1:</strong> Rede Cegonha / RAMI: Linha de Cuidado, Vinculação e Direitos no Parto</span>
+            <span class="text-slate-400 text-[11px] flex items-center gap-1"><i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Toque para ampliar</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-sky-50 dark:bg-sky-950/30 border border-sky-200 dark:border-sky-900 text-xs sm:text-sm space-y-2">
+          <h4 class="font-bold text-sky-800 dark:text-sky-300 flex items-center gap-1.5">
+            <i data-lucide="heart" class="w-4 h-4"></i> Conquistas Legais do Parto Humanizado no SUS
+          </h4>
+          <ul class="list-disc pl-5 space-y-1 text-slate-700 dark:text-slate-300">
+            <li><strong>Lei Federal nº 11.108/2005 (Lei do Acompanhante):</strong> Garante à parturiente o direito a 1 acompanhante de SUA livre escolha durante todo o trabalho de parto, parto e pós-parto imediato. O hospital não pode limitar a familiares.</li>
+            <li><strong>Vinculação à Maternidade de Referência:</strong> Toda gestante tem direito a conhecer previamente o hospital onde dará à luz.</li>
+            <li><strong>Mínimo de 6 Consultas de Pré-Natal:</strong> 1 no 1º trimestre, 2 no 2º trimestre e 3 no 3º trimestre, intercaladas entre médico e enfermeiro.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- MÓDULO 94: Climatério & Janela da THM -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
+            Módulo 94
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Terapia Hormonal da Menopausa</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Climatério, Menopausa, Janela de Oportunidade da THM & Regra do Útero
+        </h3>
+
+        <!-- Infográfico Janela THM -->
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+          <img src="assets/img/climaterio_janela_oportunidade_thm.jpg" alt="Infográfico Farmacológico: Janela de Oportunidade da THM, Regra do Útero e Vias de Administração" class="w-full h-auto object-cover img-zoom-hover">
+          <div class="p-3 bg-slate-900/90 text-white text-xs flex items-center justify-between">
+            <span><strong>Figura 94.1:</strong> Janela da THM: Idade &lt; 60 anos, Menopausa &lt; 10 anos e Esquemas Hormonais</span>
+            <span class="text-slate-400 text-[11px] flex items-center gap-1"><i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Toque para ampliar</span>
+          </div>
+        </div>
+
+        <!-- 5 Anos Box -->
+        <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900">
+          <h4 class="text-xs font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-1 flex items-center gap-1.5">
+            🎈 Didática para Criança de 5 Anos: A Janelinha da Primavera e a Casinha do Útero
+          </h4>
+          <p class="text-xs sm:text-sm text-amber-950 dark:text-amber-200 leading-relaxed">
+            Quando a mulher faz aniversário de 50 anos, os ovários cansam de fabricar o hormônio do calorzinho (estrogênio) e ela sente fogachos quentes como se estivesse no deserto. Se ela tomar o remedinho logo no começo (na janelinha antes dos 60 anos), o coração e os ossinhos ficam protegidos! Mas tem uma regra de ouro: se a casinha do útero ainda está lá, temos que colocar um "guarda-costas" (a progesterona) para o estrogênio não deixar a parede do útero crescer descontrolada!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 space-y-1.5">
+            <span class="font-bold text-emerald-800 dark:text-emerald-300 uppercase">A Regra do Útero</span>
+            <p class="text-slate-700 dark:text-slate-300"><strong>Com Útero:</strong> OBRIGATÓRIO associar <strong>Progesterona</strong> ao estrogênio para evitar hiperplasia e adenocarcinoma endometrial.</p>
+            <p class="text-slate-700 dark:text-slate-300"><strong>Sem Útero (Histerectomizada):</strong> Usa <strong>Estrogênio Isolado</strong> (não precisa de progesterona, reduzindo risco de mama!).</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-sky-50 dark:bg-sky-950/30 border border-sky-200 dark:border-sky-800 space-y-1.5">
+            <span class="font-bold text-sky-800 dark:text-sky-300 uppercase">Via Transdérmica Obrigatória</span>
+            <p class="text-slate-700 dark:text-slate-300">Indicada em pacientes <strong>hipertensas, tabagistas, obesas ou com hipertrigliceridemia</strong>.</p>
+            <p class="text-slate-700 dark:text-slate-300"><strong>Por quê?</strong> Porque o gel ou adesivo pula a primeira passagem hepática, não estimula fatores pró-trombóticos nem triglicerídeos!</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- MÓDULO 95: Rastreamento Ósseo e DEXA -->
+      <article class="module-card glass-card p-5 sm:p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">
+            Módulo 95
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Densitometria Óssea DEXA & FRAX</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Rastreamento Integral & Saúde Óssea: Critérios DEXA, T-Score & Prevenção de Fraturas
+        </h3>
+
+        <!-- Imagem DEXA Real -->
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-900">
+          <img src="assets/img/dexa_densitometria_real.jpg" alt="Estação de Trabalho Diagnóstica: Densitometria Óssea DEXA com Curvas T-score e FRAX na Menopausa" class="w-full h-auto object-cover img-zoom-hover">
+          <div class="p-3 bg-slate-900/90 text-white text-xs flex items-center justify-between">
+            <span><strong>Figura 95.1:</strong> Varredura de Densitometria Óssea DEXA (Coluna Lombar L1-L4 e Colo Femoral)</span>
+            <span class="text-slate-400 text-[11px] flex items-center gap-1"><i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Toque para ampliar</span>
+          </div>
+        </div>
+
+        <div class="table-responsive-container">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-purple-50 dark:bg-purple-950/50 text-purple-900 dark:text-purple-200 border-b border-purple-200 dark:border-purple-800">
+                <th class="p-2.5 font-bold">Classificação da OMS</th>
+                <th class="p-2.5 font-bold">Critério T-score (DEXA)</th>
+                <th class="p-2.5 font-bold">Conduta Terapêutica Baseada em Evidências</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+              <tr>
+                <td class="p-2.5 font-bold text-emerald-600">Densidade Óssea Normal</td>
+                <td class="p-2.5 font-mono font-bold text-emerald-600">T-score ≥ -1,0 DP</td>
+                <td class="p-2.5">Incentivo a exercícios com carga, ingestão dietética de cálcio (1000 mg/dia) e vitamina D.</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-amber-600">Osteopenia</td>
+                <td class="p-2.5 font-mono font-bold text-amber-600">-2,5 &lt; T-score &lt; -1,0 DP</td>
+                <td class="p-2.5">Calcular ferramenta FRAX. Se fratura osteoporótica maior ≥ 20% ou quadril ≥ 3% = Tratar com bisfosfonatos!</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-bold text-rose-600">Osteoporose Estabelecida</td>
+                <td class="p-2.5 font-mono font-bold text-rose-600">T-score ≤ -2,5 DP (ou fratura prévia)</td>
+                <td class="p-2.5"><strong>Bisfosfonatos (Alendronato 70mg/semana VO)</strong> de 1ª linha + Cálcio 1200mg + Vitamina D 1000–2000 UI/dia.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <!-- ======================================================================
+         SEÇÃO DE FERRAMENTAS CLÍNICAS INTERATIVAS (3 CALCULADORAS)
+         ====================================================================== -->
+    <section id="ferramentas" class="space-y-6 pt-4">
+      <div class="flex items-center justify-between border-b border-amber-200 dark:border-amber-900/60 pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold">
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">Calculadoras Clínicas & Algoritmos Interativos</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Simuladores Rápidos para Consulta e Prova Prática</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono font-bold text-amber-600 dark:text-amber-400 hidden sm:inline">Tempo Real</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Calculadora 1: Critérios MEC OMS/CDC -->
+        <div class="glass-card p-5 rounded-2xl flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+              <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">1. Critérios MEC (OMS / CDC)</h3>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Avalie elegibilidade contraceptiva em condições clínicas críticas de prova.</p>
+
+            <div class="space-y-3 pt-2">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Condição Médica:</label>
+                <select id="calc-mec-cond" class="w-full text-xs p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-indigo-500">
+                  <option value="">Selecione uma condição...</option>
+                  <option value="enxaqueca_aura">Enxaqueca com Aura (qualquer idade)</option>
+                  <option value="tabagismo_35">Fumante ≥ 35 anos (≥ 15 cigarros/dia)</option>
+                  <option value="has_grave">Hipertensão Grave (PAS ≥ 160 ou PAD ≥ 100)</option>
+                  <option value="tev_previo">Histórico de Trombose Venosa / Embolia</option>
+                  <option value="cancer_mama_atual">Câncer de Mama Ativo</option>
+                  <option value="pos_parto_recente">Pós-parto imediato (&lt; 21 dias)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Método Contraceptivo:</label>
+                <select id="calc-mec-metodo" class="w-full text-xs p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-indigo-500">
+                  <option value="">Selecione o método...</option>
+                  <option value="combinado">Combinado Oral / Anel / Adesivo / Injetável Mensal</option>
+                  <option value="progest_iso">Progestagênio Isolado (Implante / Minipílula)</option>
+                  <option value="diu_lng">DIU com Levonorgestrel (Mirena)</option>
+                  <option value="diu_cobre">DIU de Cobre (TCu380A)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div id="calc-mec-result" class="min-h-[70px]">
+            <div class="p-3 text-center text-xs text-slate-400 border border-dashed border-slate-300 dark:border-slate-700 rounded-xl">
+              Selecione a condição e o método para avaliar a categoria MEC.
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculadora 2: Contracepção de Emergência -->
+        <div class="glass-card p-5 rounded-2xl flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-rose-600 dark:text-rose-400">
+              <i data-lucide="clock" class="w-5 h-5"></i>
+              <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">2. Contracepção de Emergência</h3>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Escolha a melhor profilaxia baseando-se no tempo pós-coito e peso corporal.</p>
+
+            <div class="space-y-3 pt-2">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Horas decorridas desde a relação:</label>
+                <input type="number" id="ce-horas" value="36" min="1" max="140" class="w-full text-xs p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-rose-500">
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Índice de Massa Corporal (IMC em kg/m²):</label>
+                <input type="number" id="ce-imc" value="28" min="16" max="55" step="0.5" class="w-full text-xs p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-rose-500">
+              </div>
+
+              <button type="button" id="btn-calc-ce" class="w-full py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition-all shadow-md flex items-center justify-center gap-1.5">
+                <i data-lucide="zap" class="w-3.5 h-3.5"></i> Simular Conduta de Emergência
+              </button>
+            </div>
+          </div>
+
+          <div id="ce-result" class="min-h-[70px]"></div>
+        </div>
+
+        <!-- Calculadora 3: Janela de Oportunidade da THM -->
+        <div class="glass-card p-5 rounded-2xl flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
+              <i data-lucide="check-circle" class="w-5 h-5"></i>
+              <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">3. Janela de Oportunidade da THM</h3>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Avalie indicação, via de administração e proteção endometrial na menopausa.</p>
+
+            <div class="grid grid-cols-2 gap-2 pt-2">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Idade Atual:</label>
+                <input type="number" id="thm-idade" value="53" min="40" max="85" class="w-full text-xs p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200">
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Anos Menopausa:</label>
+                <input type="number" id="thm-tempo" value="3" min="0" max="30" class="w-full text-xs p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Presença de Útero:</label>
+                <select id="thm-utero" class="w-full text-xs p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200">
+                  <option value="com_utero">Com Útero</option>
+                  <option value="histerectomizada">Histerectomizada</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Comorbidades:</label>
+                <select id="thm-comorb" class="w-full text-xs p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200">
+                  <option value="nenhuma">Sem Comorbidades</option>
+                  <option value="has_trig">Hipertensão / Triglicerídeos</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="button" id="btn-calc-thm" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-md flex items-center justify-center gap-1.5">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Avaliar Elegibilidade THM
+            </button>
+          </div>
+
+          <div id="thm-result" class="min-h-[70px]"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         GALERIA VISUAL COMPLETA EM ALTA RESOLUÇÃO (14 IMAGENS E DIAGRAMAS)
+         ====================================================================== -->
+    <section id="galeria-visual" class="space-y-6 pt-4">
+      <div class="flex items-center justify-between border-b border-sky-200 dark:border-sky-900/60 pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-sky-600 text-white flex items-center justify-center font-bold">
+            <i data-lucide="images" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">Galeria Visual em Alta Definição</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">14 Fotografias Clínicas Ultra-Realistas e Diagramas Médicos de Alto Rendimento</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono font-bold text-sky-600 dark:text-sky-400 hidden sm:inline">Lightbox Interativo</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+        
+        <!-- Card 1 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/larc_diu_implante_real.jpg" alt="Dispositivos LARCs: DIU Cobre, DIU LNG e Implante Subdérmico" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-black/60 text-white">Foto Real</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">1. Dispositivos LARCs</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">DIU Cobre, LNG e Implante</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/hsg_fluoroscopia_real.jpg" alt="Fluoroscopia: Histerossalpingografia (HSG) Cotte Positivo" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-black/60 text-white">Exame Real</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">2. Histerossalpingografia</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Avaliação tubária e Cotte</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/violencia_sexual_kit_pep_real.jpg" alt="Kit Forense de Violência Sexual e PEP HIV Dolutegravir" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-black/60 text-white">Foto Real</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">3. Kit PEP & Forense</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Profilaxia antirretroviral 28d</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/amiu_instrumental_real.jpg" alt="Instrumental Cirúrgico de Aspiração Manual Intrauterina (AMIU)" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-black/60 text-white">Cirúrgico</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">4. Instrumental AMIU</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Vácuo Ipas e Cânulas Karman</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/dexa_densitometria_real.jpg" alt="Densitometria Óssea DEXA com Curvas T-Score" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-black/60 text-white">Diagnóstico</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">5. Densitometria DEXA</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">T-score coluna lombar e fêmur</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/consulta_acolhimento_real.jpg" alt="Acolhimento Humanizado na Atenção Primária à Saúde" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-black/60 text-white">Clínica</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">6. Acolhimento na APS</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Escuta qualificada no SUS</p>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/criterios_mec_oms_cdc_tabela.jpg" alt="Critérios MEC OMS/CDC 1 a 4" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-indigo-600 text-white">Infográfico</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">7. Critérios MEC 1-4</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Tabela OMS, CDC e Brasil</p>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/contracepcao_emergencia_algoritmo.jpg" alt="Algoritmo de Contracepção de Emergência" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-600 text-white">Algoritmo</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">8. Algoritmo Emergência</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Janela 72h-120h e IMC</p>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/infertilidade_4_pilares_investigacao.jpg" alt="Os 4 Pilares da Infertilidade Conjugal" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-600 text-white">Fluxograma</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">9. 4 Pilares Infertilidade</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Sêmen, trompas, útero, óvulo</p>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/violencia_sexual_protocolo_72h.jpg" alt="Protocolo 72h Pós-Violência Sexual" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-600 text-white">Infográfico</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">10. Protocolo 72 Horas</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">PEP HIV, ISTs e Vacinação</p>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/violencia_domestica_lei_maria_penha.jpg" alt="Lei Maria da Penha e Ciclo de Walker" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-purple-600 text-white">Infográfico</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">11. Lei Maria da Penha</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">5 modalidades e Walker</p>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/aborto_legal_brasil_usmle.jpg" alt="Aborto Legal no Brasil vs EMTALA nos EUA" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-indigo-600 text-white">Comparativo</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">12. Aborto Legal Brasil</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">3 hipóteses sem exigência BO</p>
+          </div>
+        </div>
+
+        <!-- Card 13 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/climaterio_janela_oportunidade_thm.jpg" alt="Janela de Oportunidade da THM" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-600 text-white">Infográfico</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">13. Janela da THM</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Idade &lt; 60 e regra do útero</p>
+          </div>
+        </div>
+
+        <!-- Card 14 -->
+        <div class="glass-card rounded-xl overflow-hidden group border border-slate-200 dark:border-slate-800">
+          <div class="aspect-video bg-slate-900 overflow-hidden relative">
+            <img src="assets/img/rede_cegonha_rami_linha_cuidado.jpg" alt="Rede Cegonha / RAMI e Linha de Cuidado" class="w-full h-full object-cover img-zoom-hover">
+            <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-600 text-white">Infográfico</span>
+          </div>
+          <div class="p-2.5">
+            <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">14. Rede Cegonha (RAMI)</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Pré-natal e Lei 11.108/2005</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FLASHCARDS 3D INTERATIVOS
+         ====================================================================== -->
+    <section class="space-y-4 pt-4">
+      <div class="flex items-center justify-between border-b border-indigo-200 dark:border-indigo-900/60 pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">Flashcards High-Yield 3D</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Revisão Rápida dos Conceitos mais Cobrados nos Exames</p>
+          </div>
+        </div>
+        <span id="card-counter" class="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400">1 de 8</span>
+      </div>
+
+      <div class="max-w-2xl mx-auto space-y-4">
+        <!-- Contêiner do Flashcard Flip -->
+        <div id="flashcard-container" class="flashcard-card"></div>
+
+        <div class="flex items-center justify-between gap-3">
+          <button type="button" id="card-prev" class="px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-400 text-slate-700 dark:text-slate-300 flex items-center gap-1.5 transition-all">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i> Anterior
+          </button>
+          <span class="text-xs text-slate-400">Toque no card para virar</span>
+          <button type="button" id="card-next" class="px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-400 text-slate-700 dark:text-slate-300 flex items-center gap-1.5 transition-all">
+            Próximo <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CENTRAL DE CASOS CLÍNICOS INTERATIVOS (15 CASOS USMLE STEP 2 / 3)
+         ====================================================================== -->
+    <section id="casos-clinicos" class="space-y-6 pt-4">
+      <div class="flex items-center justify-between border-b border-purple-200 dark:border-purple-900/60 pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center font-bold">
+            <i data-lucide="award" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">Central de Casos Clínicos Interativos</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">15 Questões no Padrão USMLE Step 2 CK / Step 3 com Feedback Ivy League & Didática de 5 Anos</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placar ao Vivo de Performance -->
+      <div class="glass-card p-4 rounded-xl flex flex-wrap items-center justify-between gap-4 border border-purple-300/40 dark:border-purple-800/40">
+        <div class="flex items-center gap-2">
+          <i data-lucide="bar-chart-2" class="w-5 h-5 text-purple-600 dark:text-purple-400"></i>
+          <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">Seu Desempenho no Simulado:</span>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-mono font-bold">
+          <div>Respondidos: <span id="score-respondidos" class="text-purple-600 dark:text-purple-400">0</span>/15</div>
+          <div>Acertos: <span id="score-acertos" class="text-emerald-600">0</span></div>
+          <div>Aproveitamento: <span id="score-pct" class="text-indigo-600 dark:text-indigo-400">0%</span></div>
+        </div>
+      </div>
+
+      <!-- Contêiner Injetado pelo app.js -->
+      <div id="casos-clinicos-container" class="space-y-4"></div>
+    </section>
+
+    <!-- ======================================================================
+         ROTEIROS DE COMUNICAÇÃO EMPÁTICA & OSCE (STEP 2 CS)
+         ====================================================================== -->
+    <section class="space-y-4 pt-4">
+      <div class="flex items-center justify-between border-b border-indigo-200 dark:border-indigo-900/60 pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">Roteiros Práticos de Comunicação & OSCE</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Habilidades Interpessoais para Prova Prática e Consultório</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 hidden sm:inline">Step 2 CS / Revalida</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+        <div class="glass-card p-4 rounded-xl space-y-2 border border-slate-200 dark:border-slate-800">
+          <h4 class="font-bold text-rose-600 dark:text-rose-400 flex items-center gap-1.5">
+            <i data-lucide="heart" class="w-4 h-4"></i> 1. Acolhimento Imediato pós-Violência Sexual
+          </h4>
+          <p class="text-slate-700 dark:text-slate-300 italic bg-slate-50 dark:bg-slate-900/60 p-3 rounded-lg border border-slate-200 dark:border-slate-800">
+            "Sinto muito que você tenha passado por isso. Você está em um local seguro agora e a culpa NÃO é sua. Vamos cuidar da sua saúde primeiro com remédios preventivos. Não vamos forçar nada e você tem total controle sobre cada exame que fizermos."
+          </p>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl space-y-2 border border-slate-200 dark:border-slate-800">
+          <h4 class="font-bold text-purple-600 dark:text-purple-400 flex items-center gap-1.5">
+            <i data-lucide="shield" class="w-4 h-4"></i> 2. Suspeita e Revelação de Violência Doméstica
+          </h4>
+          <p class="text-slate-700 dark:text-slate-300 italic bg-slate-50 dark:bg-slate-900/60 p-3 rounded-lg border border-slate-200 dark:border-slate-800">
+            "Muitas pacientes que atendo com esses sintomas ou hematomas relatam passar por brigas ou abusos em casa. Alguém tem te machucado, ameaçado ou controlado o seu dinheiro? Quero que saiba que nossa conversa é confidencial e estou aqui para apoiar você."
+          </p>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl space-y-2 border border-slate-200 dark:border-slate-800">
+          <h4 class="font-bold text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5">
+            <i data-lucide="lock" class="w-4 h-4"></i> 3. Consulta de Contracepção na Adolescente
+          </h4>
+          <p class="text-slate-700 dark:text-slate-300 italic bg-slate-50 dark:bg-slate-900/60 p-3 rounded-lg border border-slate-200 dark:border-slate-800">
+            "Tudo o que conversarmos aqui sobre sua vida e métodos para evitar gravidez fica em segredo entre nós, garantido pela lei médica. Seus pais não serão informados, a menos que sua vida esteja em perigo imediato. Vamos escolher o melhor método para você."
+          </p>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl space-y-2 border border-slate-200 dark:border-slate-800">
+          <h4 class="font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+            <i data-lucide="thermometer-sun" class="w-4 h-4"></i> 4. Decisão Compartilhada na Terapia Hormonal (THM)
+          </h4>
+          <p class="text-slate-700 dark:text-slate-300 italic bg-slate-50 dark:bg-slate-900/60 p-3 rounded-lg border border-slate-200 dark:border-slate-800">
+            "Você está com 52 anos e seus calores estão intensos. Como iniciamos nos primeiros anos após a menopausa, os hormônios trazem grande benefício para o coração e para os ossos com segurança. Como você tem útero, usaremos progesterona para proteger a parede interna."
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       MODAL LIGHTBOX FULLSCREEN PARA VISUALIZAÇÃO DE IMAGENS HD
+       ====================================================================== -->
+  <div id="image-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 bg-slate-950/90 backdrop-blur-md transition-all">
+    <div id="modal-backdrop" class="absolute inset-0"></div>
+    <div class="relative z-10 max-w-5xl w-full max-h-[92vh] flex flex-col items-center bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+      <div class="w-full p-3 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between text-white text-xs">
+        <span id="modal-caption" class="font-bold truncate max-w-[80%]">Visualização em Alta Resolução</span>
+        <button type="button" id="modal-close" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" title="Fechar (Esc)">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <div class="w-full flex-1 overflow-auto flex items-center justify-center p-2 bg-black/40">
+        <img id="modal-img" src="" alt="Imagem Ampliada" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-lg">
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       FOOTER RESPONSIVO & CRÉDITOS DO PROJETO
+       ====================================================================== -->
+  <footer class="mt-12 border-t border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/80 py-8 text-xs text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-center sm:text-left">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-xs">8</div>
+          <span class="font-bold text-slate-900 dark:text-white">Portal de Ginecologia & Obstetrícia — Parte 8</span>
+        </div>
+        <p class="text-center sm:text-right text-[11px]">
+          Alinhado aos programas de Residência Médica (SUS/ENARE/USP), USMLE Step 2 CK / Step 3 e Revalida.
+        </p>
+      </div>
+      <div class="border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400">
+        <p>© 2026 Internato GO • Pronto para Deploy no GitHub Pages (.nojekyll incluso)</p>
+        <p>Desenvolvido com Tailwind CSS, JavaScript Vanilla, Lucide Icons e Imagens Clínicas HD.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
